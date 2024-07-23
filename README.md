@@ -15,7 +15,7 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
    ```bash
    ssh your-login@pod-login1.cnsi.ucsb.edu
    ```
-   It will ask your password. Just type in the temporary password in your email, and press Enter.
+   It will ask for your password. Just type in the temporary password in your email, and press Enter.
    This will **log you into Pod's login node**, which is where you set up your environments, scripts, and send your jobs to other nodes in the cluster.
    Then, follow the instructions on the email to **change your temporary password** to the one that you want!
    
