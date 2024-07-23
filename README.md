@@ -71,12 +71,13 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
    
    (If you run into problems, reach out to `jaewon_lee@ucsb.edu`)
    
-10. Now you should have the proper `fair-chem` environment on your login node! Let's check this by:
+9. Now you should have the proper `fair-chem` environment on your login node! Let's check this by:
+    
     `conda activate fair-chem`
 
     If you're in the vanilla bash settings (if you haven't changed anything about how the Linux CLI appears), you should see the following change:
    
     `(base) [your_user_name@pod-login1 ~]$ conda activate fair-chem` ⟶ `(fair-chem) [your_user_name@pod-login1 ~]$`
 
-11. Congrats! You're all set to run ocp calculations!
+10. Congrats! You're all set to run ocp calculations!
    
