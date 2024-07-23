@@ -34,7 +34,8 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
    Follow the installation guides from the _Miniconda_ link above. You can use the **"Quick Command Line Install"** part at the bottom of the page.
    It will take a while to install. Sit back and relax!
    
-6. If everything went okay, you should be able to see a 'miniconda3' folder in your home directory. This is a good time to go over **basic linux commands**.
+6. If everything went okay, you should be able to see a 'miniconda3' folder in your home directory.\
+   This is a good time to go over **basic linux commands**.
     |list files/folders| change directory | pring working directory |
     |------------------|------------------|-------------------------|
     |`ls`              | `cd {directory_where_you_want_to_move_to}` | `pwd`|
@@ -44,15 +45,17 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
 
     CSC's [HPC overview](https://csc.cnsi.ucsb.edu/sites/default/files/2023-01/HPC_Workshop_Winter_23.pdf), as well as resources such as this [cheat sheet](https://www.stationx.net/linux-command-line-cheat-sheet/) will guide you through more essential Linux CLI(command line interface) commands.
 
-8. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations is by following the guidelines [here](https://fair-chem.github.io/core/install.html). However, the default environment uses cuda 11.8, which is not an available module on Pod. Therefore, we will set it up so that it uses cuda 12.1. I have set up my local environment as such, and the environment file is available on Pod as: `fairchem_Pod.yml`.
+7. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations is by following the guidelines [here](https://fair-chem.github.io/core/install.html). However, the default environment uses cuda 11.8, which is not an available module on Pod. Therefore, we will set it up so that it uses cuda 12.1. I have set up my local environment as such, and the environment file is available on Pod as: `fairchem_Pod.yml`.
    Copy the `.yml` file into your home directory:
    `cp /home/jaewon_lee/fairchem_Pod.yml ./'
    
-9. The `.yml` file acts like the seed of a tree. We can use it to reproduce the environment that I have on my system:
+8. The `.yml` file acts like the seed of a tree. We can use it to reproduce the environment that I have on my system:
    `conda env create -f fairchem_Pod.yml`
    (If you run into problems, reach out to `jaewon_lee@ucsb.edu`)
    
-10. Now you should have the proper `fair-chem` environment on your login node!  
+9. Now you should have the proper `fair-chem` environment on your login node! Let's check this by:
+    `conda activate fair-chem`
+
    
 
    '
