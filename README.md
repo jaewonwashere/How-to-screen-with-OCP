@@ -1,5 +1,5 @@
 # OCP_screening
-Codebase for screening catalysts using the Open Catalyst Project. Largely based off of the Open Catalyst Project tutorials available on the fair-chem repository.
+Codebase for screening catalysts using the [Open Catalyst Project](https://opencatalystproject.org/index.html). Largely based off of the Open Catalyst Project tutorials available on Meta AI Research's [fair-chem repository](https://github.com/FAIR-Chem/fairchem).
 Includes scripts for determining relevant bulk structures, cleaving surfaces, setting adsorption sites, configuring adslabs, relaxation, and post-processing.
 
 ## Setup
@@ -49,5 +49,6 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
     pwd
     ```
     CSC's [HPC overview](https://csc.cnsi.ucsb.edu/sites/default/files/2023-01/HPC_Workshop_Winter_23.pdf), as well as resources such as this [cheat sheet](https://www.stationx.net/linux-command-line-cheat-sheet/) will guide you through more essential Linux CLI(command line interface) commands.
-    
+
+11. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations
 12. 
