@@ -50,5 +50,5 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
     ```
     CSC's [HPC overview](https://csc.cnsi.ucsb.edu/sites/default/files/2023-01/HPC_Workshop_Winter_23.pdf), as well as resources such as this [cheat sheet](https://www.stationx.net/linux-command-line-cheat-sheet/) will guide you through more essential Linux CLI(command line interface) commands.
 
-11. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations
+11. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations is by following the guidelines [here](https://fair-chem.github.io/core/install.html).
 12. 
