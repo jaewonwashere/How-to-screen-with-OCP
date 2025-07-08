@@ -9,7 +9,7 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
 1. [**Request an account**](https://csc.cnsi.ucsb.edu/) on the UCSB Center for Scientific Computing. It will take a couple of days to get it set up.
    
 2. Referring to the document above, **set up the client that suits your local operating system**. You will access the campus cluster (Pod) via _ssh_, and each operating system (Windows, MacOS, Linux) has different ways of using _ssh_.
-   * I use [_wsl_](https://learn.microsoft.com/en-us/windows/wsl/install) on my Windows system (you can also use Putty) and the default terminal on my Mac.
+   * I use [_wsl_](https://learn.microsoft.com/en-us/windows/wsl/install) on my Windows system (you can also use Putty) and [iTerm2](https://iterm2.com/) on my Mac.
      
 3. You'll get an email that has your login information (with a temporary password). _ssh_ in to your account by typing in:
    ```bash
@@ -60,24 +60,8 @@ Here is the UCSB CNSI CSC's [overview](https://csc.cnsi.ucsb.edu/sites/default/f
 
     CSC's [HPC overview](https://csc.cnsi.ucsb.edu/sites/default/files/2023-01/HPC_Workshop_Winter_23.pdf), as well as resources such as this [cheat sheet](https://www.stationx.net/linux-command-line-cheat-sheet/) will guide you through more essential Linux CLI(command line interface) commands.
 
-7. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations is by following the guidelines [here](https://fair-chem.github.io/core/install.html). However, the default environment uses cuda 11.8, which is not an available module on Pod. Therefore, we will set it up so that it uses cuda 12.1. I have set up my local environment as such, and the environment file is available on Pod as: `fairchem_Pod.yml`.
-   Copy the `.yml` file into your home directory:
+7. Now, let's install some packages. An easy way to install (almost) everything you need to run ocp calculations is by following the guidelines [here](https://github.com/facebookresearch/fairchem/tree/ced7f7fe6b21bd092586126bc5ffad9a559ee17e).
    
-   `cp /home/jaewon_lee/fairchem_Pod.yml ~`
-   
-8. The `.yml` file acts like the seed of a tree. We can use it to reproduce the environment that I have on my system:
-    
-   `conda env create -f fairchem_Pod.yml`
-   
-   (If you run into problems, reach out to `jaewon_lee@ucsb.edu`)
-   
-9. Now you should have the proper `fair-chem` environment on your login node! Let's check this by:
-    
-    `conda activate fair-chem`
 
-    If you're in the vanilla bash settings (if you haven't changed anything about how the Linux CLI appears), you should see the following change:
-   
-    `(base) [your_user_name@pod-login1 ~]$ conda activate fair-chem` ⟶ `(fair-chem) [your_user_name@pod-login1 ~]$`
-
-10. Congrats! You're all set to run ocp calculations!
+8. Congrats! You're all set to run ocp calculations!
    
