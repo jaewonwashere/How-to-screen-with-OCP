@@ -30,7 +30,7 @@ The script starts by importing tools (libraries) it needs:
 ### 2. **Reading User Inputs (`parse_arguments`)**
 The script expects you to provide four pieces of information when you run it:
 - `--adsorbates`: The molecule to study (e.g., `ipxo`).
-- `--username`: Your CSC Pod username (e.g., `jlee36`).
+- `--username`: Your CSC Pod username (e.g., `jaewon_lee`).
 - `--slab_type`: The type of metal surface (`monometallic` for single metals like Rh, or `alloy` for mixed metals).
 - `--mp_id`: The ID of the metal (e.g., `mp-74` for Rhodium).
 
@@ -38,7 +38,7 @@ These inputs are processed by the `parse_arguments` function, which makes sure y
 
 ### 3. **Creating the Molecule (`create_adsorbate_kwargs`)**
 The `create_adsorbate_kwargs` function prepares the `ipxo` molecule:
-- It loads the molecule’s structure from a file (`/home/jlee36/ocp/utils/structures/ipxoh.xyz`), which describes the positions of atoms in `ipxo`.
+- It loads the molecule’s structure from a file (`/home/jaewon_lee/ocp/utils/structures/ipxoh.xyz`), which describes the positions of atoms in `ipxo`.
 - It creates an `Adsorbate` object, a special format used by FairChem, specifying which atom in `ipxo` (index 2) will bind to the metal surface.
 - For other molecules (like `ch3` or `acetone`), it uses predefined formats or ASE’s `molecule` function.
 
@@ -65,7 +65,7 @@ The `run_adsorbml_wrapper` function is the core of the calculation:
 
 ### 7. **Main Loop (`main`)**
 The `main` function ties everything together:
-- It reads your inputs (e.g., `ipxo`, `jlee36`, `monometallic`, `mp-74`).
+- It reads your inputs (e.g., `ipxo`, `jaewon_lee`, `monometallic`, `mp-74`).
 - It loads the Rhodium surface and `ipxo` molecule.
 - It runs the simulation for each surface plane of Rhodium.
 - It prints results, including the number of valid configurations and any issues (anomalies).
@@ -79,7 +79,7 @@ To run the script, you’ll use the CSC Pod cluster’s login node for testing. 
 1. Open a terminal on your computer (e.g., Terminal on Mac, Command Prompt or PowerShell on Windows).
 2. Type the following command, replacing `jlee36` with your CSC Pod username:
    ```bash
-   ssh jlee36@pod-login.csc.ucsb.edu
+   ssh jaewon_lee@pod-login.csc.ucsb.edu
    ```
 3. Enter your password when prompted (you won’t see it as you type). If you’re using two-factor authentication, follow the prompts (e.g., enter a code from your phone).
 4. You’re now on the CSC Pod login node, where you’ll run commands.
@@ -151,13 +151,9 @@ The CSC Pod cluster uses a system called Conda to manage Python and its librarie
 ### Step 3: Verify the Molecule File
 The script needs the `ipxoh.xyz` file to define the `ipxo` molecule. Check if it exists:
 ```bash
-ls /home/jlee36/ocp/utils/structures/ipxoh.xyz
+ls /home/jaewon_lee/ocp/utils/structures/ipxoh.xyz
 ```
-If the file is listed, it’s ready. If not, ask your mentor for the correct `ipxoh.xyz` file. As a temporary placeholder (not for real calculations), you can create one:
-```bash
-mkdir -p /home/jlee36/ocp/utils/structures
-echo -e "3\n\nO 0 0 0\nH 0 0 1\nC 0 1 0" > /home/jlee36/ocp/utils/structures/ipxoh.xyz
-```
+If the file is listed, it’s ready. If not, ask your mentor.
 
 ### Step 4: Save the Script
 1. Create or edit the script file:
@@ -175,17 +171,17 @@ echo -e "3\n\nO 0 0 0\nH 0 0 1\nC 0 1 0" > /home/jlee36/ocp/utils/structures/ipx
 ### Step 5: Run the Script
 Run the script on the login node with the specific inputs for Rhodium and `ipxo`:
 ```bash
-python3 mlrelax_uma.py --adsorbates ipxo --username jlee36 --slab_type monometallic --mp_id mp-74
+python3 mlrelax_uma.py --adsorbates ipxo --username jaewon_lee --slab_type monometallic --mp_id mp-74
 ```
 - This tells the script to:
   - Use `ipxo` as the molecule.
-  - Use your username (`jlee36`).
+  - Use your username (`jaewon_lee`).
   - Use a single metal (`monometallic`).
   - Use Rhodium (`mp-74`).
 
 - You should see output like:
   ```
-  Parsed arguments: {'adsorbates': ['ipxo'], 'username': 'jlee36', 'slab_type': 'monometallic', 'mp_id': ['mp-74']}
+  Parsed arguments: {'adsorbates': ['ipxo'], 'username': 'jaewon_lee', 'slab_type': 'monometallic', 'mp_id': ['mp-74']}
   Initializing UMA model...
   UMA model initialized
   Adsorbate kwargs: [{'adsorbate': <Adsorbate object>}]
@@ -200,7 +196,7 @@ python3 mlrelax_uma.py --adsorbates ipxo --username jlee36 --slab_type monometal
 ### Step 6: Check Results
 - Look for trajectory files:
   ```bash
-  ls /home/jlee36/ocp/data/monometallic/ipxo/Rh_mp-74_100_ipxo/*.traj
+  ls /home/jaewon_lee/ocp/data/monometallic/ipxo/Rh_mp-74_100_ipxo/*.traj
   ```
   These files store the final atom positions from the simulation.
 - If you see messages about “Anomalies detected,” it means the molecule didn’t stick properly (e.g., it broke apart). Show these to your mentor.
