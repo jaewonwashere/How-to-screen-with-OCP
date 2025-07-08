@@ -87,19 +87,32 @@ To run the script, you’ll use the Expanse supercomputer’s login node for tes
 ### Step 2: Set Up the Environment
 Expanse uses a system called Conda to manage Python and its libraries. We’ll use a pre-installed environment to save time.
 
-1. Load the Conda module:
-   ```bash
-   module load anaconda3
-   ```
-   This makes Conda available.
+1. Load/install the Conda module. You can use miniconda.
 
-2. Activate the pre-installed PyTorch environment:
+2. Create a conda environment. This will be your workspace, where you will have all your dependencies installed and not clutter up your computer.
    ```bash
-   source /expanse/lustre/projects/csb176/yifanq/share-env/pytorch-env/bin/activate
+   conda create -n <your_environment_name>
+   ```
+   This creates your environment. I named mine 'uma'.
+
+
+3. Activate the pre-installed PyTorch environment:
+   ```bash
+   conda activate uma
    ```
    You’ll see `(uma)` before your prompt, indicating the environment is active.
 
-3. Check if required libraries are installed:
+4. Install required dependencies:
+  ```bash
+  pip install fairchem-core fairchem-data-oc fairchem-applications-cattsunami
+  ```
+
+  Make sure you have a Hugging Face account, have already applied for model access to the UMA model repository, and have logged in to Hugging Face using an access token. You can use the following to save an auth token,
+  ```bash
+  huggingface-cli login
+  ```
+
+5. Check if required libraries are installed:
    ```bash
    pip list | grep -E "fairchem|torch|ase"
    ```
@@ -119,11 +132,7 @@ The script needs the `ipxoh.xyz` file to define the `ipxo` molecule. Check if it
 ```bash
 ls /home/jlee36/ocp/utils/structures/ipxoh.xyz
 ```
-If you see the file name, it’s there. If not, create a placeholder (ask your mentor for the correct file later):
-```bash
-mkdir -p /home/jlee36/ocp/utils/structures
-echo -e "3\n\nO 0 0 0\nH 0 0 1\nC 0 1 0" > /home/jlee36/ocp/utils/structures/ipxoh.xyz
-```
+If you see the file name, it’s there. If not, ask your mentor for the correct file.
 
 ### Step 4: Save the Script
 1. Create or edit the script file:
